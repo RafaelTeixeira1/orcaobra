@@ -1,0 +1,12 @@
+target/
+*.class
+*.log
+.idea/
+*.iml
+.vscode/
+.DS_Store
+data/
+*.mv.db
+*.trace.db
+.env
+estagio/saida/
