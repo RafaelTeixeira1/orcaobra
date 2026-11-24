@@ -1,0 +1,77 @@
+# Registro diário do estágio — preencha um bloco por dia trabalhado.
+# Depois rode:  python estagio/gerar_relatorio.py
+# O relatório sai em estagio/saida/ (Word e, se o LibreOffice estiver instalado, PDF).
+
+cabecalho:
+  estagiario: "SEU NOME COMPLETO"            # <- preencher
+  curso: "SEU CURSO"                          # <- preencher (ex.: Bacharelado em Sistemas de Informação)
+  concedente: "Instituto Federal Goiano – Campus Ceres (Setor de TI)"
+  endereco: "Rodovia GO-154, Km 03, s/n, Zona Rural, CEP 76300-000"
+  cidade: "Ceres"
+  estado: "Goiás"
+  supervisor: "NOME DO SUPERVISOR"            # <- preencher
+  periodo: "02/10/2026 a 27/11/2026"
+
+# Atividades previstas no plano de estágio (use os números em "atividades" abaixo)
+atividades_do_plano:
+  1: "Levantamento e análise de requisitos para desenvolvimento e manutenção de sistemas"
+  2: "Desenvolvimento e manutenção de aplicações e sistemas web"
+  3: "Modelagem, implementação e manutenção de bancos de dados"
+  4: "Realização de testes, identificação e correção de erros em sistemas"
+  5: "Utilização de ferramentas de versionamento de código e apoio à organização do processo de desenvolvimento de software"
+  6: "Elaboração e atualização de documentação e manutenção de sistemas e soluções de TI"
+  7: "Suporte técnico e resolução de problemas relacionados a sistemas e recursos de TI"
+
+opcoes:
+  mostrar_numero_das_atividades: true   # acrescenta "(Ativ. 1, 2...)" ao fim de cada dia
+  largura_foto_cm: 13
+
+registros:
+  - data: 2026-11-24
+    horas: 6
+    atividades: [1, 2, 3, 4, 5, 6]
+    descricao: >-
+      Levantamento e análise de requisitos do sistema OrçaObra (orçamentos de obras residenciais);
+      definição da arquitetura hexagonal e dos padrões de projeto; criação do repositório Git;
+      modelagem do banco de dados com migrações Flyway (PostgreSQL/H2); desenvolvimento do núcleo
+      em Java e da API REST e interface web com Spring Boot; testes automatizados e documentação técnica.
+    fotos:
+      - arquivo: fotos/2026-11-24-commits.png
+        legenda: "Registro do dia: commits no repositório e resultado dos testes"
+      - arquivo: fotos/2026-11-24-tela.png
+        legenda: "Tela de detalhe do orçamento no sistema OrçaObra"
+
+# ---------------------------------------------------------------------------------------
+# Sugestão para os próximos dias. Ao concluir cada um, tire o "#" das linhas, ajuste o texto
+# ao que você realmente fez e gere a foto com:  python estagio/gerar_evidencia.py AAAA-MM-DD
+# ---------------------------------------------------------------------------------------
+#  - data: 2026-11-25
+#    horas: 6
+#    atividades: [4, 5, 7]
+#    descricao: >-
+#      Configuração do ambiente de desenvolvimento (JDK 21, Maven, IDE); execução do build e dos
+#      testes automatizados; identificação e correção de erros; publicação do repositório no
+#      GitHub com integração contínua (GitHub Actions).
+#    fotos:
+#      - arquivo: fotos/2026-11-25-commits.png
+#        legenda: "Build e testes executados"
+#
+#  - data: 2026-11-26
+#    horas: 6
+#    atividades: [1, 2, 4]
+#    descricao: >-
+#      Análise do requisito de orçamento de cobertura (telhado) e implementação da nova
+#      calculadora de serviço com o padrão Strategy; testes unitários e ajustes na interface web.
+#    fotos:
+#      - arquivo: fotos/2026-11-26-commits.png
+#        legenda: "Nova funcionalidade e testes"
+#
+#  - data: 2026-11-27
+#    horas: 6
+#    atividades: [6, 7]
+#    descricao: >-
+#      Atualização da documentação do sistema (README, requisitos e arquitetura), revisão do
+#      código e apresentação do sistema ao supervisor.
+#    fotos:
+#      - arquivo: fotos/2026-11-27-commits.png
+#        legenda: "Documentação atualizada"
