@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: orcaobra
+  datasource:
+    url: jdbc:h2:file:./data/orcaobra;AUTO_SERVER=TRUE
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none   # o esquema é versionado pelo Flyway
+  flyway:
+    enabled: true
+  jackson:
+    default-property-inclusion: non_null
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
+
+orcaobra:
+  fuso-horario: America/Sao_Paulo
+  empresa:
+    nome: "Sua Empresa de Engenharia"
+    responsavel-tecnico: "Eng. Civil Seu Nome"
+    registro-profissional: "CREA-GO 000000/D"
+    telefone: "(62) 90000-0000"
+    email: "contato@suaempresa.com.br"
+    cidade: "Ceres-GO"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/orcaobra}
+    username: ${DB_USER:orcaobra}
+    password: ${DB_PASSWORD:orcaobra}
+  h2:
+    console:
+      enabled: false
