@@ -1,0 +1,26 @@
+services:
+  banco:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: orcaobra
+      POSTGRES_USER: orcaobra
+      POSTGRES_PASSWORD: orcaobra
+    ports:
+      - "5432:5432"
+    volumes:
+      - dados:/var/lib/postgresql/data
+
+  app:
+    build: .
+    depends_on:
+      - banco
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      DB_URL: jdbc:postgresql://banco:5432/orcaobra
+      DB_USER: orcaobra
+      DB_PASSWORD: orcaobra
+    ports:
+      - "8080:8080"
+
+volumes:
+  dados:
