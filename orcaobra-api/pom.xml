@@ -13,6 +13,10 @@
     <artifactId>orcaobra-api</artifactId>
     <name>OrçaObra :: API (adaptadores Spring Boot)</name>
 
+    <properties>
+        <spring-boot.run.skip>false</spring-boot.run.skip>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>br.com.orcaobra</groupId>
